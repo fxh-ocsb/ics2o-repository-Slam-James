@@ -6,3 +6,4 @@
 # OUTPUT
 
 print("Hello World")
+print("Hello World")
