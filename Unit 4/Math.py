@@ -6,10 +6,11 @@
 
 
 # VARIABLE DEFINITION
-Descriptive =  int(input("Enter Number 1:"))
-Descriptive_ish = int(input("Enter Number 2:"))
+
 
 # INPUT
+Descriptive =  int(input("Enter Number 1:"))
+Descriptive_ish = int(input("Enter Number 2:"))
 
 # PROCESSING
 Adding_vertisement = Descriptive + Descriptive_ish
@@ -17,7 +18,11 @@ Sub_Liminal = Descriptive - Descriptive_ish
 Multi_Talented = Descriptive * Descriptive_ish
 Division_Of_Nations = Descriptive / Descriptive_ish
 # OUTPUT
+print("Addition:")
 print(Descriptive,"+", Descriptive_ish, "=", Adding_vertisement)
+print("Subtraction")
 print(Descriptive, "-", Descriptive_ish, "=",  Sub_Liminal)
+print("Multiplication")
 print(Descriptive, "*", Descriptive_ish, "=",  Multi_Talented)
+print("Division")
 print(Descriptive, "/", Descriptive_ish, "=", Division_Of_Nations)
