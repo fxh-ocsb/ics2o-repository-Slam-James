@@ -18,14 +18,14 @@ Item_10 = float(input("Enter Price Of Item 10:"))
 Main_Price = Item_1 + Item_2 + Item_3 + Item_4 + Item_5 + Item_6 + Item_7 + Item_8 + Item_9 + Item_10
 Tax = Main_Price * 0.13
 Grand_Total = Main_Price + Tax
-round(Tax, 2)
-round(Main_Price, 2)
-round(Grand_Total, 2)
+
 
 # PROCESSING
-Tax = Tax
-format_Tax = "{:.2f}".format(Tax)
+
+RoundTax = "{:.2f}".format(Tax)
+RoundGT = "{:.2f}".format(Grand_Total)
+RoundMP = "{:.2f}".format(Main_Price)
 # OUTPUT
-print("Tax", "=", Tax)
-print("Main Price", "=", Main_Price)
-print("Grand Total", "=", Grand_Total)
+print("Tax", "=", RoundTax)
+print("Main Price", "=", RoundMP)
+print("Grand Total", "=", RoundGT)

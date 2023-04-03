@@ -12,6 +12,7 @@ Length = int(input("Enter Width Of Carpeted Area M:"))
 Area = Width * Length
 Total_Price = 2.25 * Area
 # PROCESSING
+Rounded_Price = "{:.2f}".format(Total_Price)
 
 # OUTPUT
-print("The total cost of your carpet is $" + str(Total_Price))
+print("The total cost of your carpet is $" + str(Rounded_Price))
