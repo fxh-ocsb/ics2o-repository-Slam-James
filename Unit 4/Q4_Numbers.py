@@ -3,7 +3,7 @@
 #April 3, 2023 
 #Display Numbers in a table like format 
 
-
+from tabulate import tabulate
 
 # VARIABLE DEFINITION
 
@@ -26,10 +26,7 @@ Average = Sum / 5
 
   
 #define header names
-print("|------------------|")
-print("|","Sum", "|" , Sum, "|")
-print("|------------------|")
-print("|Average", "|", Average, "|")
-print("|------------------|")
-print("|", "Nums", "|", Num_1, Num_2, Num_3, Num_4, Num_5, "|")
-print("|------------------|")
+table = [["Average", Average],
+         ["Sum", Sum]]
+         
+print(tabulate(table))
