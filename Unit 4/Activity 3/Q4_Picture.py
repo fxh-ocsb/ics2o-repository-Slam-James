@@ -29,7 +29,7 @@ draw.polygon(gameDisplay, Color('black'), [(1, 150), (250, 250), (1, 350)])
 
 draw.circle(gameDisplay, Color ('white'), (1,250), 20)
 draw.circle(gameDisplay, Color ('white'), (100,250), 20)
-draw.circle(gameDisplay, Color ('white'), (200,250), 20)
+draw.circle(gameDisplay, Color ('white'), (200,250), 19)
 
 
 # draw a body
