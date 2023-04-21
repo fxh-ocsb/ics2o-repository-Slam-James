@@ -18,4 +18,8 @@ if Q2 == "Yes":
     Large_Number = Large_Number - 1
     for j in range(Large_Number, -1, Inverted_Count):
         print(j)
+        
+    print("There you go! Come back any time!")
     
+else:
+    print("All right, come back any time!")
