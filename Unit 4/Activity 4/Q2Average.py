@@ -8,7 +8,7 @@ i = 0
 subtotal = 0.0
 # Program Title
 print ("Averaging Program")
-print ()
+print (":)")
 
 # Input - User prompt, with a sentinel (-1) to signal completion
 price = float(input("Enter price (000 to Exit): "))
