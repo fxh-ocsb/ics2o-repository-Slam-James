@@ -1,99 +1,54 @@
-#Created: April 2023
-#Screen_Saver
-#pygame animation using nested loops
-
 import pygame
+import random
 
-from pygame import Color
-from pygame import draw
-from pygame import display
-from pygame import time
-
-SCREEN_SIZE = (500, 500)
-center_x = 250
-center_y = 150
-
-# initialize pygame modules
+# Initialize Pygame
 pygame.init()
 
-clock = time.Clock()
+# Set the screen size
+screen_width = 800
+screen_height = 600
+screen = pygame.display.set_mode((screen_width, screen_height))
 
-# get a surface for graphics display
-gameDisplay = display.set_mode(SCREEN_SIZE)
+# Set the colors
+bg_color = (0, 0, 0)  # black background
+ball_color = (255, 255, 255)  # white ball
 
-running = True
+# Set the ball properties
+ball_radius = 30
+ball_x = random.randint(ball_radius, screen_width - ball_radius)
+ball_y = random.randint(ball_radius, screen_height - ball_radius)
+ball_dx = random.randint(-5, 5)
+ball_dy = random.randint(-5, 5)
 
-while running:
+# Set the clock
+clock = pygame.time.Clock()
+
+# Run the screensaver
+while True:
+    # Handle events
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
-            
-    for i in range (0, 100):
-        # white background
-        gameDisplay.fill(Color('black'))
+            pygame.quit()
+            quit()
 
-        # simple animation - ball
-        draw.circle(gameDisplay, Color('white'), (center_x, center_y), 30)
+    # Move the ball
+    ball_x += ball_dx
+    ball_y += ball_dy
 
-        # show the graphics on the screen
-        display.flip()
+    # Bounce the ball off the walls
+    if ball_x < ball_radius or ball_x > screen_width - ball_radius:
+        ball_dx = -ball_dx
+    if ball_y < ball_radius or ball_y > screen_height - ball_radius:
+        ball_dy = -ball_dy
 
-        # get ready for next frame - move the ball down and to the right
-        center_x += 1
-        center_y += 1
+    # Draw the ball
+    screen.fill(bg_color)
+    pygame.draw.circle(screen, ball_color, (ball_x, ball_y), ball_radius)
 
+    # Update the display
+    pygame.display.flip()
+
+    # Set the framerate
+    clock.tick(60)
         # delay the program to obtain 60 frames per second
-        clock.tick(60)
-
-    for i in range (0, 100):
-        # white background
-        gameDisplay.fill(Color('white'))
-
-        # simple animation - ball
-        draw.circle(gameDisplay, Color('black'),(center_x, center_y), 30)
-
-        # show the graphics on the screen
-        display.flip()
-
-        # get ready for next frame - move the ball down and to the left
-        center_x -= 1
-        center_y += 1
-
-        # delay the program to obtain 60 frames per second
-        clock.tick(60)
-
-    for i in range (0, 100):
-        # white background
-        gameDisplay.fill(Color('black'))
-
-        # simple animation - ball
-        draw.circle(gameDisplay, Color('white'),(center_x, center_y), 30)
-
-        # show the graphics on the screen
-        display.flip()
-
-        # get ready for next frame -- move the ball up and to the left
-        center_x -= 1
-        center_y -= 1
-
-        # delay the program to obtain 60 frames per second
-        clock.tick(60)
-
-    for i in range (0, 100):
-        # white background
-        gameDisplay.fill(Color('white'))
-
-        # simple animation - ball
-        draw.circle(gameDisplay, Color('black'), (center_x, center_y), 30)
-
-        # show the graphics on the screen
-        display.flip()
-
-        # get ready for next frame - - move the ball up and to the right
-        center_x += 1
-        center_y -= 1
-
-        # delay the program to obtain 60 frames per second
-        clock.tick(60)
-# Quit Pygame
-pygame.quit()
+    
