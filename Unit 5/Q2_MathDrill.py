@@ -55,4 +55,6 @@ if Question_Type == "Subtraction":
         print("Congrats, You Are Correct!")
         
     else:
-        print("Sorry, That's incorrect... The Correct Answer Was", Subtraction)
+        print("Sorry, That's incorrect... The Correct Answer Was", Subtraction, ". Good Try Though!")
+        
+        #Done LIKE DINNER
