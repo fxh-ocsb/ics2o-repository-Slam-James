@@ -3,10 +3,10 @@ A 1
 B 2
 C 3
 D 4
-B
+Answer = B
 2 + 2
 A 2
 B 4
 C 6
 D 8
-B
+Answer = B
