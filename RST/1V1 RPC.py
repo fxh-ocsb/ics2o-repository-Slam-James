@@ -6,22 +6,24 @@ import os
 from random import randint
 from test.inspect_fodder2 import cls135
 Player_1_score = 0
+Player_2_score = 0
 Computer_score = 0
 #create a list of play options
 Player_count = input("How many players (One or Two)")
-
+Player = False
 if Player_count == "One":
     t = ["Rock", "Paper", "Scissors"]
 
 #assign a random play to the computer
-    computer = t[randint(0,2)]
+   
 
 #set player to False
-    player = False
+    Player = False
 
-    while player == False:
+    while Player == False:
 #set player to True
-        player = input("Rock, Paper, Scissors?")
+        computer = t[randint(0,2)]
+        player = input("Rock, Paper, Scissors? (Press Q To Quit)")
         if player == computer:
             print("Tie!")
         elif player == "Rock":
@@ -69,80 +71,87 @@ if Player_count == "One":
                 print("Computer Score:", Computer_score)
                 print("Player Score:", Player_1_score)
                 print("\n")
+        elif player == "Q":
+            print("Alright, have a nice day")
+            Player = True
         else:
             print("That's not a valid play. Check your spelling!")
             print("Scores remain unchanged")
     #player was set to True, but need it to be False
-    player = False
-    computer = t[randint(0,2)]
-    #create a list of play options
-    t = ["Rock", "Paper", "Scissors"]
-#assign a random play to the computer
-    computer = t[randint(0,2)]
-
-#set player to False
-    player = False
-    while player == False:
-#set player to True
-        player = input("Rock, Paper, Scissors?")
-        print("\n")
-        if player == computer:
-            print("Tie!")
-        elif player == "Rock":
-            if computer == "Paper":
-                print("You lose!", computer, "covers", player)
-                Computer_score += 1
-                print("Computer Score:", Computer_score)
-                print("Player Score:", Player_1_score)
-                print("\n")
-            else:
-                print("You win!", player, "smashes", computer)
-                Player_1_score += 1
-
-                print("Computer Score:", Computer_score)
-                print("Player Score:", Player_1_score)
-                print("\n")
-        elif player == "Paper":
-            if computer == "Scissors":
-                print("You lose!", computer, "cut", player)
-                Computer_score += 1
-
-                print("Computer Score:", Computer_score)
-                print("Player Score:", Player_1_score)
-                print("\n")
-            else:
-                print("You win!", player, "covers", computer)
-                Player_1_score += 1
-
-                print("Computer Score:", Computer_score)
-                print("Player Score:", Player_1_score)
-                print("\n")
-        elif player == "Scissors":
-            if computer == "Rock":
-                print("You lose...", computer, "smashes", player)
-                Computer_score += 1
-
-                print("Computer Score:", Computer_score)
-                print("Player Score:", Player_1_score)
-                print("\n")
-            else:
-                print("You win!", player, "cut", computer)
-                Player_1_score += 1
-                print("Computer Score:", Computer_score)
-                print("Player Score:", Player_1_score)
-                print("\n")
-        else:
-            print("That's not a valid play. Check your spelling!")
-    #player was set to True, but we want it to be False so the loop continues
-    player = False
-    computer = t[randint(0,2)]\
+   
     
 
 elif Player_count == "Two":
     t = ["Player 1 choose: Rock", "Paper", "Scissors"]
 
-    Player_1 = input("Player 1 Choose: Rock, Paper, Scissors?")
-    os.system('cls')
-    Player_2 = input("Player 2 Choose: Rock, Paper, Scissors?")
-    os.system('cls')
+
+
+    while Player == False:
+#set player to True
+        player = input("Player 1 Choose: Rock, Paper, Scissors? (Press Q To Quit)")
+        Player_2 = input("Player 2 Choose: Rock, Paper, Scissors?")
+        Player = False
     
+        if player == Player_2 :
+            print("Tie!")
+        elif player == "Rock":
+            if Player_2 == "Paper":
+                print("Player 2 Wins!", Player_2, "covers", player)
+                Player_2_score += 1
+
+                print("Player 1 Score:", Player_1_score)
+                print("Player 2 Score:", Player_2_score)
+                print("\n")
+            else:
+                print("Player 1 Wins!", player, "smashes", Player_2)
+                Player_1_score += 1
+       
+                print("Player 1 Score:", Player_1_score)
+                print("Player 2 Score:", Player_2_score)
+                print("\n")
+        elif player == "Paper":
+            if Player_2 == "Scissors":
+                print("Player 2 Wins!", Player_2, "cut", player)
+                Player_2_score += 1
+       
+                print("Player 1 Score:", Player_1_score)
+                print("Player 2 Score:", Player_2_score)
+                print("\n")
+            else:
+                print("Player 1 Wins!", player, "covers", Player_2)
+                Player_1_score += 1
+      
+                print("Player 1 Score:", Player_1_score)
+                print("Player 2 Score:", Player_2_score)
+                print("\n")
+        elif player == "Scissors":
+            if Player_2 == "Rock":
+                print("Player 2 Wins", Player_2, "smashes", player)
+                Player_2_score += 1
+               
+                print("Player 1 Score:", Player_1_score)
+                print("Player 2 Score:", Player_2_score)
+                print("\n")
+            else:
+                print("Player 1 Wins!", player, "cut", Player_2)
+                Player_1_score += 1
+         
+                print("Player 1 Score:", Player_1_score)
+                print("Player 2 Score:", Player_2_score)
+                print("\n")
+                
+        elif player == "Q":
+            print("Alright, have a nice day")
+            Player = True
+        else:
+            print("That's not a valid play. Check your spelling!")
+            print("Scores remain unchanged")
+            print(player)
+            print(Player_2)
+    #player was set to True, but need it to be False
+    Player = False
+    computer = t[randint(0,2)]
+    #create a list of play options
+    t = ["Rock", "Paper", "Scissors"]
+#assign a random play to the computer
+    computer = t[randint(0,2)]
