@@ -89,6 +89,10 @@ elif Player_count == "Two":
     while Player == False:
 #set player to True
         player = input("Player 1 Choose: Rock, Paper, Scissors? (Press Q To Quit)")
+        if player == "Q":
+            print("Alright, have a nice day")
+            Player = True
+            exit("See You Later")
         Player_2 = input("Player 2 Choose: Rock, Paper, Scissors?")
         Player = False
     
@@ -140,9 +144,7 @@ elif Player_count == "Two":
                 print("Player 2 Score:", Player_2_score)
                 print("\n")
                 
-        elif player == "Q":
-            print("Alright, have a nice day")
-            Player = True
+       
         else:
             print("That's not a valid play. Check your spelling!")
             print("Scores remain unchanged")
