@@ -5,6 +5,20 @@
 import os
 from random import randint
 from test.inspect_fodder2 import cls135
+from pygame import mixer
+
+#Instantiate mixer
+mixer.init()
+
+#Load audio file
+mixer.music.load('song.mp3')
+
+#Set preferred volume
+mixer.music.set_volume(0.5)
+
+#Play the music
+mixer.music.play()
+
 Player_1_score = 0
 Player_2_score = 0
 Computer_score = 0
