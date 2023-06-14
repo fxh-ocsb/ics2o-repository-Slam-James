@@ -71,8 +71,22 @@ if Player_count == "One":
                 print("Computer Score:", Computer_score)
                 print("Player Score:", Player_1_score)
                 print("\n")
+                
+        elif player == "Sniper":
+            print("WOW, You found the super secret weapon! You Automatically win the round.")
+            Player_1_score += 1
+            print("Computer Score:", Computer_score)
+            print("Player Score:", Player_1_score)
+            
         elif player == "Q":
-            print("Alright, have a nice day")
+            if Player_1_score > Computer_score:
+                print("Congrats! You Won By A Score Of:", Player_1_score, "To", Computer_score, " Win(s).")
+            elif Player_1_score < Computer_score:
+                print("Better Luck Next Time, You Lost With A Score Of:", Computer_score, "To", Player_1_score, "Win(s).")
+            else:
+                print("You Tied With The Computer Both At", Player_1_score, "Win(s).")
+                
+            print("Have a nice day")
             Player = True
         else:
             print("That's not a valid play. Check your spelling!")
