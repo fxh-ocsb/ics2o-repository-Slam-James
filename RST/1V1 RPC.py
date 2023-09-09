@@ -2,9 +2,11 @@
 # NAME OF THE PROGRAM: 1V1 RPC 
 # DATE OF CREATION: RST Week
 # PURPOSE OF PROGRAM: To Be Able To Play RPC either By Oneself, Or With A Friend
-import os
+import random
+
+import pygame
 from random import randint
-from test.inspect_fodder2 import cls135
+
 from pygame import mixer
 
 #Instantiate mixer
